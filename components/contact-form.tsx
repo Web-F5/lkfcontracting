@@ -24,19 +24,26 @@ export function ContactForm() {
     setMessage(null)
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://formspree.io/f/xkoarnna', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.requirements,
+        }),
       })
 
-      const result = await response.json()
-
       if (response.ok) {
-        setMessage({ type: 'success', text: 'Thank you! We&apos;ll be in touch soon.' })
+        setMessage({ type: 'success', text: 'Thank you! We will be in touch soon.' })
         setFormData({ name: '', email: '', phone: '', requirements: '' })
       } else {
-        setMessage({ type: 'error', text: result.error || 'Failed to send message. Please try again.' })
+        const result = await response.json()
+        setMessage({ type: 'error', text: result?.errors?.[0]?.message || 'Failed to send message. Please try again.' })
       }
     } catch (error) {
       setMessage({ type: 'error', text: 'An unexpected error occurred. Please try again.' })
