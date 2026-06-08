@@ -91,12 +91,6 @@ export function Footer() {
                 </a>
               </div>
               <div className="flex items-start gap-3">
-                <Mail size={18} className="flex-shrink-0 mt-0.5 text-golden" />
-                <a href="mailto:admin@lkfcontracting.com.au" className="hover:text-golden transition-colors">
-                  admin@lkfcontracting.com.au
-                </a>
-              </div>
-              <div className="flex items-start gap-3">
                 <MapPin size={18} className="flex-shrink-0 mt-0.5 text-golden" />
                 <div>
                   <p>567 Marungi Road</p>
