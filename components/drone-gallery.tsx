@@ -58,7 +58,7 @@ export function DroneGallery() {
             src={active.src}
             controls
             autoPlay
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
           >
             Your browser does not support the video tag.
           </video>
