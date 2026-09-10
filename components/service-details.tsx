@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { DroneGallery } from './drone-gallery'
 
 export function ServiceDetails() {
   return (
@@ -232,13 +233,8 @@ export function ServiceDetails() {
                 </ul>
               </div>
             </div>
-            <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
-              <Image
-                src="/images/drone-spraying.jpg"
-                alt="Drone Spraying & Spreading"
-                fill
-                className="object-cover"
-              />
+            <div>
+              <DroneGallery />
             </div>
           </div>
         </div>
