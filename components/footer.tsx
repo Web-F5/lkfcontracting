@@ -26,27 +26,27 @@ export function Footer() {
             <h3 className="font-bold mb-6 text-lg">Services</h3>
             <ul className="space-y-3 text-gray-300 text-sm">
               <li>
-                <Link href="#gps-laser" className="hover:text-golden transition-colors">
+                <Link href="/laser-gps-landforming" className="hover:text-golden transition-colors">
                   GPS & Laser Landforming
                 </Link>
               </li>
               <li>
-                <Link href="#hay-contracting" className="hover:text-golden transition-colors">
+                <Link href="/#hay-contracting" className="hover:text-golden transition-colors">
                   Hay Contracting
                 </Link>
               </li>
               <li>
-                <Link href="#hay-steamer" className="hover:text-golden transition-colors">
+                <Link href="/#hay-steamer" className="hover:text-golden transition-colors">
                   Hay Steamer
                 </Link>
               </li>
               <li>
-                <Link href="#drone-spraying" className="hover:text-golden transition-colors">
+                <Link href="/#drone-spraying" className="hover:text-golden transition-colors">
                   Drone Spraying
                 </Link>
               </li>
               <li>
-                <Link href="#tillage" className="hover:text-golden transition-colors">
+                <Link href="/#tillage" className="hover:text-golden transition-colors">
                   Tillage & Seeding
                 </Link>
               </li>
@@ -58,17 +58,17 @@ export function Footer() {
             <h3 className="font-bold mb-6 text-lg">Company</h3>
             <ul className="space-y-3 text-gray-300 text-sm">
               <li>
-                <Link href="#about" className="hover:text-golden transition-colors">
+                <Link href="/#about" className="hover:text-golden transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="#trust" className="hover:text-golden transition-colors">
+                <Link href="/#trust" className="hover:text-golden transition-colors">
                   Why Choose Us
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="hover:text-golden transition-colors">
+                <Link href="/#contact" className="hover:text-golden transition-colors">
                   Contact Us
                 </Link>
               </li>

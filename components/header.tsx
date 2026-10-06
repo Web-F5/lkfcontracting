@@ -10,12 +10,12 @@ export function Header() {
   const [isServicesOpen, setIsServicesOpen] = useState(false)
 
   const services = [
-    { name: 'GPS & Laser Landforming', href: '#gps-laser' },
-    { name: 'Hay Contracting Services', href: '#hay-contracting' },
-    { name: 'Hay & Silage', href: '#hay-silage' },
-    { name: 'Hay Steamer', href: '#hay-steamer' },
-    { name: 'Drone Spraying & Spreading', href: '#drone-spraying' },
-    { name: 'Tillage & Seeding', href: '#tillage' },
+    { name: 'GPS & Laser Landforming', href: '/laser-gps-landforming' },
+    { name: 'Hay Contracting Services', href: '/#hay-contracting' },
+    { name: 'Hay & Silage', href: '/#hay-silage' },
+    { name: 'Hay Steamer', href: '/#hay-steamer' },
+    { name: 'Drone Spraying & Spreading', href: '/#drone-spraying' },
+    { name: 'Tillage & Seeding', href: '/#tillage' },
   ]
 
   return (
@@ -23,7 +23,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href="#" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3">
             <Image
               src="/images/LKF_logo-sm.webp"
               alt="LKF Contracting"
@@ -38,7 +38,7 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             <Link
-              href="#about"
+              href="/#about"
               className="text-gray-700 hover:text-charcoal transition-colors font-medium"
             >
               About
@@ -64,7 +64,7 @@ export function Header() {
             </div>
 
             <Link
-              href="#contact"
+              href="/#contact"
               className="text-gray-700 hover:text-charcoal transition-colors font-medium"
             >
               Contact
@@ -80,7 +80,7 @@ export function Header() {
               0403 767 542
             </a>
             <a
-              href="#contact"
+              href="/#contact"
               className="bg-golden text-charcoal px-6 py-2 rounded-lg font-semibold hover:bg-yellow-400 transition-colors shadow-md"
             >
               Contact Us
@@ -100,7 +100,7 @@ export function Header() {
         {isOpen && (
           <nav className="lg:hidden pb-4 border-t border-gray-200 space-y-2">
             <Link
-              href="#about"
+              href="/#about"
               className="block py-2 px-2 text-gray-700 hover:text-charcoal hover:bg-gray-50 rounded"
               onClick={() => setIsOpen(false)}
             >
@@ -135,7 +135,7 @@ export function Header() {
             </div>
 
             <Link
-              href="#contact"
+              href="/#contact"
               className="block py-2 px-2 text-gray-700 hover:text-charcoal hover:bg-gray-50 rounded"
               onClick={() => setIsOpen(false)}
             >
@@ -150,7 +150,7 @@ export function Header() {
                 0403 767 542
               </a>
               <a
-                href="#contact"
+                href="/#contact"
                 className="block bg-golden text-charcoal px-4 py-2 rounded-lg font-semibold text-center hover:bg-yellow-400 transition-colors"
                 onClick={() => setIsOpen(false)}
               >

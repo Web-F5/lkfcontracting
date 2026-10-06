@@ -38,6 +38,12 @@ export function ServiceDetails() {
                     <span>Enhanced irrigation efficiency and crop establishment</span>
                   </li>
                 </ul>
+                <Link
+                  href="/laser-gps-landforming"
+                  className="inline-block pt-4 text-pumpkin font-semibold hover:underline"
+                >
+                  See more about Laser & GPS Landforming →
+                </Link>
               </div>
             </div>
             <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">

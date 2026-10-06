@@ -8,6 +8,7 @@ export function ServicesGrid() {
       title: 'GPS & Laser Landforming',
       description: 'Precision land preparation using advanced technology for optimal results',
       image: '/images/gps-laser.jpg',
+      href: '/laser-gps-landforming',
     },
     {
       id: 'hay-contracting',
@@ -50,7 +51,7 @@ export function ServicesGrid() {
           {services.map((service) => (
             <Link
               key={service.id}
-              href={`#${service.id}`}
+              href={service.href ?? `#${service.id}`}
               className="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
             >
               <div className="relative h-48 w-full overflow-hidden bg-gray-200">
