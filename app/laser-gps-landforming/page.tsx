@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { ChevronDown } from 'lucide-react'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { ArtDirectedImage } from '@/components/art-directed-image'
@@ -78,6 +79,51 @@ const beforeAfter = [
     alt: '3D surface model of the paddock with the landforming design applied',
   },
 ]
+
+const faqs = [
+  {
+    q: 'What is landforming and why is it done?',
+    a: 'Landforming reshapes the surface of a paddock to a designed grade so water moves across the land in a controlled, even way. It improves irrigation efficiency and drainage, removes low spots where water ponds, and creates a more uniform paddock for crop establishment and machinery.',
+  },
+  {
+    q: 'What is the difference between laser and GPS landforming?',
+    a: 'Laser grading uses a laser transmitter to set a flat reference plane that the scraper follows, which suits simple, single-slope grades. GPS landforming follows a 3D design using satellite positioning, so it can handle complex or varying grades, work across multiple bays in a single pass, and does not rely on line of sight. We offer both, so we can match the method to your paddock.',
+  },
+  {
+    q: 'Can you work from my surveyor’s plan?',
+    a: 'Yes. A farm plan layout prepared by your surveyor can be loaded straight into the GPS guidance system, so the earthworks are built to the design. If you don’t have a plan, we can help with survey data and design.',
+  },
+  {
+    q: 'Is landforming only for irrigated land?',
+    a: 'No. Dryland landforming is about managing surface water. Height data from tractors and harvesters can be converted into survey maps, and the drainage is then designed to minimise earthworks and eliminate water ponding.',
+  },
+  {
+    q: 'How does GPS landforming reduce the amount of earthworks?',
+    a: 'A GPS design works from the paddock’s existing surface, so the finished grades can be planned to balance cut and fill and to move only the soil that is needed. Less soil moved generally means less machine time and less disturbance to the paddock.',
+  },
+  {
+    q: 'Can landforming fix water ponding and waterlogging?',
+    a: 'In most cases, yes. Designing the grades and drainage so water has somewhere to go removes the low areas where it pools. We can also provide drainage for centre pivots and lateral move irrigators.',
+  },
+  {
+    q: 'What does full project management include?',
+    a: 'We look after the project from start to finish and provide a full turnkey handover. That includes a road grader for channels and laneways, an excavator for drainage and for installing bay outlets and culverts, and tractors with buckets for the landforming itself.',
+  },
+  {
+    q: 'How do I get started, and when is the best time to do the work?',
+    a: 'Call 0403 767 542 or send us a message through the contact form with your location, paddock size, how you plan to use the land and any existing plans or surveys. Landforming is generally best done when the ground is dry and workable, such as after harvest and before the next crop or irrigation season, and we can advise on timing for your property.',
+  },
+]
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+}
 
 const galleryItems: MediaItem[] = [
   { type: 'image', src: photo('04'), alt: 'John Deere tractor and landforming equipment at sunset' },
@@ -254,8 +300,38 @@ export default function LaserGpsLandformingPage() {
           </div>
         </section>
 
+        {/* FAQ */}
+        <section id="faq" className="py-20 bg-gray-50">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-10 text-center text-balance">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-3">
+              {faqs.map(({ q, a }) => (
+                <details
+                  key={q}
+                  className="group rounded-lg border border-gray-200 bg-white shadow-sm"
+                >
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-lg font-semibold text-charcoal [&::-webkit-details-marker]:hidden">
+                    {q}
+                    <ChevronDown
+                      size={20}
+                      className="shrink-0 text-pumpkin transition-transform group-open:rotate-180"
+                    />
+                  </summary>
+                  <p className="px-5 pb-5 text-gray-700 leading-relaxed">{a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+          />
+        </section>
+
         {/* Gallery */}
-        <section id="gallery" className="py-20 bg-gray-50">
+        <section id="gallery" className="py-20 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-10 text-center text-balance">
               Gallery
