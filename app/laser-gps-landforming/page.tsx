@@ -66,6 +66,19 @@ const projectManagement = [
   'Tractors and buckets for landforming',
 ]
 
+const beforeAfter = [
+  {
+    label: 'Before',
+    src: `${IMG}/3d_T3D_view_survey (BEFORE).webp`,
+    alt: '3D surface model of the paddock from the original survey',
+  },
+  {
+    label: 'After',
+    src: `${IMG}/3d_T3D_view_design (AFTER).webp`,
+    alt: '3D surface model of the paddock with the landforming design applied',
+  },
+]
+
 const galleryItems: MediaItem[] = [
   { type: 'image', src: photo('04'), alt: 'John Deere tractor and landforming equipment at sunset' },
   { type: 'image', src: photo('02'), alt: 'Close-up of a John Deere tractor working at night' },
@@ -155,11 +168,11 @@ export default function LaserGpsLandformingPage() {
                 </h2>
                 <CheckList items={laserOrGps} />
               </div>
-              <div className="relative h-[28rem] md:h-96 rounded-lg overflow-hidden shadow-lg">
-                <ArtDirectedImage
-                  desktopSrc={photo('06')}
-                  mobileSrc={photo('03')}
-                  alt="Tractor and landforming equipment lit up at dusk"
+              <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
+                <Image
+                  src={`${IMG}/Dookie_GoogleEarth_ContourPlan_Example.webp`}
+                  alt="Contour plan of a paddock overlaid on satellite imagery"
+                  fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"
                 />
@@ -214,8 +227,35 @@ export default function LaserGpsLandformingPage() {
           </div>
         </section>
 
+        {/* Before & After */}
+        <section id="before-after" className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-10 text-center text-balance">
+              Before & After
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              {beforeAfter.map(({ label, src, alt }) => (
+                <figure key={label}>
+                  <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg border border-gray-200 bg-white">
+                    <Image
+                      src={src}
+                      alt={alt}
+                      fill
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      className="object-contain"
+                    />
+                  </div>
+                  <figcaption className="mt-4 text-center text-2xl font-bold text-charcoal">
+                    {label}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Gallery */}
-        <section id="gallery" className="py-20 bg-white">
+        <section id="gallery" className="py-20 bg-gray-50">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-4xl md:text-5xl font-bold text-charcoal mb-10 text-center text-balance">
               Gallery
