@@ -110,6 +110,17 @@ export function Footer() {
               <a href="#" className="hover:text-golden transition-colors">Terms of Service</a>
             </div>
           </div>
+          <p className="mt-6 text-center text-sm text-gray-400">
+            Website design, development and SEO by{' '}
+            <a
+              href="https://webf5.com.au"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-golden hover:text-yellow-300 transition-colors"
+            >
+              Web F5
+            </a>
+          </p>
         </div>
       </div>
     </footer>
