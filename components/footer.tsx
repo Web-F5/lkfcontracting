@@ -72,11 +72,6 @@ export function Footer() {
                   Contact Us
                 </Link>
               </li>
-              <li>
-                <a href="https://webf5.au" className="hover:text-golden transition-colors">
-                  Web Design by Web F5
-                </a>
-              </li>
             </ul>
           </div>
 
